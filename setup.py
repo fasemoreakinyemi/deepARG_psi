@@ -11,7 +11,7 @@ setuptools.setup(
     description="A python library to classify protein sequences of Antibiotic resitiance nature into AB groups based on psi-blast",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/fasemoreakinyemi/deepARG_psi/",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
