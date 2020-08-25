@@ -108,7 +108,8 @@ class Features_extractor():
                                            quoting=csv.QUOTE_MINIMAL)
             prediction_writer.writerow(["Sequence ID",
                                         "Sequence Length",
-                                        "Predicted ABR category"])
+                                        "Predicted ABR category",
+                                        "Probability"])
             for record in SeqIO.parse(self.protein_sequence, "fasta"):
                 file_path = toFile(str(record.seq),
                                    record.id,
@@ -122,10 +123,12 @@ class Features_extractor():
                     final_array = average(handleRows(pssm_array, 0, 400),
                                       len(pssm_array))
                     prediction = int("".join([str(i) for i in loaded_model.predict(final_array).tolist()]))
+                    pred_prob = max(loaded_model.predict_proba(final_array)[0])
                     pred_category = list(self.amr_gene_class_dict.keys())[list(self.amr_gene_class_dict.values()).index(prediction)]
                     entry = [record.description,
                              str(len(record.seq)),
-                             pred_category]
+                             pred_category,
+                             pred_prob]
                     prediction_writer.writerow(entry)
 
 
