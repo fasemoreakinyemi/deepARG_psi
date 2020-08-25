@@ -1,0 +1,14 @@
+README.md
+setup.py
+deepARG_psi.egg-info/PKG-INFO
+deepARG_psi.egg-info/SOURCES.txt
+deepARG_psi.egg-info/dependency_links.txt
+deepARG_psi.egg-info/top_level.txt
+deepARG_psilibs/__init__.py
+deepARG_psilibs/controller.py
+deepARG_psilibs/create_directories.py
+deepARG_psilibs/features_vectorizer.py
+deepARG_psilibs/model.py
+deepARG_psilibs/network.py
+deepARG_psilibs/prokka.py
+deepARG_psilibs/utils.py
