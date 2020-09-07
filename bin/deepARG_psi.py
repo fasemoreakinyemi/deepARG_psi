@@ -47,6 +47,8 @@ def create_parser():
     prediction_parser = subparsers.add_parser(
         "predict", help="predict antibiotic category")
     prediction_parser.add_argument(
+        "--prediction_type", "-pet", help="Prediction type CTD or PSSM")
+    prediction_parser.add_argument(
         "--fasta_sequence", "-fs", help="Path to fasta file")
     prediction_parser.add_argument(
         "--prot_type", "-pt", default=False,

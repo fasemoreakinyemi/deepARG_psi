@@ -18,7 +18,7 @@ class Features_extractor():
         self.protein_sequence = protein_fasta_file
         self.pr = project_root
         self.amr_gene_class_dict = {
-           "aminoglycoside": 1, "acriflavin": 2, "acriflavine": 3,
+            "unknown": 0,"aminoglycoside": 1, "acriflavin": 2, "acriflavine": 3,
            "aminocoumarin": 4, "bacitracin": 5, "beta_lactam": 6,
            "bleomycin": 7, "chloramphenicol": 8, "deoxycholate": 9,
            "doxorubicin": 10, "multidrug": 11, "elfamycin": 12,
@@ -130,6 +130,8 @@ class Features_extractor():
                              pred_category,
                              pred_prob]
                     prediction_writer.writerow(entry)
+                    os.remove(file_path)
+                    os.remove(pssm_path)
 
 
 
